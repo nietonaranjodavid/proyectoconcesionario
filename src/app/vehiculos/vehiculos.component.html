@@ -1,0 +1,73 @@
+<h2>Vehiculos Disponibles</h2>
+
+<table>
+  <tr>
+    <th>ID:</th>
+    <th><input #vehiculoId /></th>
+  </tr>
+  <tr>
+    <th>Nombre del vehiculo:</th>
+    <th><input #vehiculoModelo /></th>
+  </tr>
+  <tr>
+    <th>Precio del vehiculo:</th>
+    <th><input #vehiculoPrecio /></th>
+  </tr>
+  <tr>
+    <th>Cantidad:</th>
+    <th><input #vehiculoCantidad /></th>
+  </tr>
+  <tr>
+    <th>Matriculacion:</th>
+    <th><input #vehiculoMatriculacion /></th>
+  </tr>
+  <tr>
+    <th>Tipo:</th>
+    <th><input #vehiculoTipo /></th>
+  </tr>
+  <tr>
+    <th>Concesionario:</th>
+    <th><input #vehiculoConcesionario /></th>
+  </tr>
+  <tr>
+    <th colspan="2">
+      <button
+        (click)="add(vehiculoId.value, vehiculoModelo.value, vehiculoPrecio.value, vehiculoCantidad.value, vehiculoMatriculacion.value, vehiculoTipo.value, vehiculoConcesionario.value); vehiculoModelo.value=''; vehiculoPrecio.value=''; vehiculoCantidad.value=''; vehiculoMatriculacion.value='';vehiculoTipo.value=''; vehiculoConcesionario.value=''"
+      >
+        Añadir vehiculo
+      </button>
+    </th>
+  </tr>
+</table>
+
+<br />
+
+<br /><br />
+<table class="vehiculos">
+  <tr>
+    <th>Modelo</th>
+    <th>Precio</th>
+    <th>Cantidad</th>
+    <th>Matriculacion</th>
+    <th>Tipo</th>
+    <th>ID</th>
+    <th>Concesionario</th>
+    <th>Ventas</th>
+  </tr>
+  <tr *ngFor="let vehiculo of vehiculos">
+    <th>
+      <a routerLink="/detail/{{vehiculo._modelo}}"> {{vehiculo._modelo}} </a>
+    </th>
+    <th>{{vehiculo._precio}}</th>
+    <th>{{vehiculo._cantidad}}</th>
+    <th>{{vehiculo._matriculacion}}</th>
+    <th>{{vehiculo._tipo}}</th>
+    <th>{{vehiculo._id}}</th>
+    <th>{{vehiculo._concesionario}}</th>
+    <th>
+      <button class="delete" title="delete vehiculo" (click)="delete(vehiculo)">
+        Vender
+      </button>
+    </th>
+  </tr>
+</table>
