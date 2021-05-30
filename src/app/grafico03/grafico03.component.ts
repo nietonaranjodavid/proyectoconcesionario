@@ -23,12 +23,12 @@ export class Grafico03Component implements OnInit {
       type: 'pie'
     },
     title: {
-      text: 'Periodo de Inspección Tecnica de Vehiculos'
+      text: 'Ganancias Totales'
     },
     yAxis: {
       accessibility: {},
       title: {
-        text: 'Años'
+        text: 'Euros'
       }
     },
     plotOptions: {
@@ -50,12 +50,12 @@ export class Grafico03Component implements OnInit {
     xAxis: {
       accessibility: {},
       title: {
-        text: 'vehiculos'
+        text: 'Concesionarios'
       }
     },
     series: [
       {
-        name: 'Periodo',
+        name: 'Ganancias',
         type: 'bar',
         data: []
       }
